@@ -44,7 +44,7 @@ Topics Covered in this chapter include:
 
 ## Result
 
-![README_resources/BookCover.jpg](README_resources/box-demo.gif)
+![README_resources/BookCover.jpg](README_resources/shapes-demo.gif)
 
 
 ## Getting Started
