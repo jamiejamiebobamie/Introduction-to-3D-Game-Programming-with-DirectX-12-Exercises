@@ -8,15 +8,15 @@ Topics Covered in this chapter include:
 * Understanding how to render objects without "flushing the command queue"
 	* The GPU runs the shader code which determines how geometry is rendered.
 	* Other than the shader code, the GPU is not directly programmable/interactable.
-	* To control the GPU, which issue commands using the command queue, which is a FIFO queue of commands that the GPU executes in order.
+	* To control the GPU, we issue commands using the command queue, which is a FIFO queue of commands that the GPU executes in order.
 	* The GPU and CPU are like two different people working together, each with different tasks that are best suited for their abiltiies.
-	* A performant system will have the CPU and GPU outputting as much work as they are able, without one getting too far ahead or behind of the other.
+	* A performant system will have the CPU and GPU outputting as much work as they are able to manage, without one getting too far ahead or behind of the other.
 	* The command "FlushCommandQueue" clears the command queue of all commands, at the end of every frame before continuing to the next frame.
 	* This command is convenient and usable for small projects, but it is not effiecient as both the GPU and CPU will be waiting for the other at different points.
 		* The GPU will wait at the beginning of the frame as it waits for commands.
 		* The CPU will wait at the end of the frame as the GPU finishes executing commands.
 	* FIX: The author creates a data structure called a "Frame Resource" that has all of the data required for a given frame.
-	* Using this fix, the CPU prepares all of the data for (at most) 3 frames in advance.
+	* Using this fix, the CPU prepares all of the data for (at most) 3 frames in advance, so that the GPU is never waiting and the CPU can happily go as fast as it can by building frames in advance.
 * Learn about root descriptors and root constants (the other two types of root parameters).
 	* Root descriptors are lightweight descriptors that are stored directly in the root signature. They do not require the indrection of a memory backing (a la a descriptor heap).
 	* Descriptor heaps are used to store descriptors for resources that are not known at compile time, such as textures and buffers.
@@ -31,8 +31,6 @@ Topics Covered in this chapter include:
 "Modify the "Shapes" demo to use GeometryGenerator::CreateGeosphere instead of GeometryGenerator::CreateSphere. Try with 0, 1, 2, and 3 subdivision levels." - pg. 313
 
 ### 2
-
-"""
 
 "Modify the "Shapes" demo to use sixteen root constants to set the per-object world matrix instead of a descriptor table." - pg. 313
 
