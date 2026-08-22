@@ -6,16 +6,18 @@
 
 Topics Covered in this chapter include:
 * Book's data structures for storing geometric data
-	* The author has created helper classes to quickly create vertex data for common shapes
+	* The author has created helper classes to quickly create vertex and index data for common shapes
 * Writing vertex and pixel shaders in HLSL
 	* The Vertex shader is the first (programmable) stage of the shader pipeline and runs once for each vertex fed from the Input Assembler (IA) stage.
+	* The Pixel shader stage is the last (programmable) stage of the shader pipeline and runs once for each pixel that is rasterized in the Rasterizer stage. The Output Merger stage is the final stage of the pipeline.
+	* The Pixel shader is used to calculate the color of each pixel on the screen. During rasterization, pixels are created by interpolating vertex data across (visible) geometry.
 * What Pipeline State Objects (PSOs) are
-	* Pipeline State Objects define the shaders used at a given point in the rendering.
-	* During rendering, different rendered objects require different shaders. PSOs bundle the required shaders for a given item or set of items, and you switch the required PSO before the draw call of the items.
-	* Proper batching of similarly-drawn items, can reduce frequent switching between PSOs, which has small performance cost.
-* Create and bind constant buffer data to the pipeline
-	* Constant buffers are one means of feeding data into the GPU where the shader code runs.
-	* They are best used for commonly used data items, like the player camera transform and other shader "globals".
+	* Pipeline State Objects define the shaders, rendering target(s), Depth/Stencil and Blend settings used at a given point in the rendering. They are large objects with many nested objects. That define almost all of the rendering settings.
+	* During rendering, different rendered objects require different rendering settings. PSOs bundle the required shaders for a given item or set of items, and you switch to the required PSO before the draw call of the item(s).
+	* Proper batching of similarly-drawn items, can reduce frequent switching between PSOs, which is good, because switching PSOs has a small performance cost.
+* How to create and bind constant buffer data to the pipeline
+	* Constant buffers are one means of feeding CPU data into the GPU where the shader code runs.
+	* Constant buffers are best used for commonly used data items, like the player camera transform and other shader "globals".
 * What root signatures are and how to create them
 	* Root signatures define the shape of the data that the shader can expect to recieve during the draw call.
 	* Root signatures are made up of root parameters, which come in the three varieties: root descriptors, root constants, and root descriptor tables.
@@ -38,9 +40,7 @@ vin.PosL.z += 0.6f + 04f*sin(2.0f*gTime);
 
 You will need to add a gTime constant buffer variable; this variable corresponds to the current GameTimer::TotalTime() value. This will animate the vertices as a function of time...
 
-
-"""
-- pg. 262
+""" - pg. 262
 
 ### 7
 
