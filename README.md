@@ -66,6 +66,8 @@ Topics Covered in this chapter include:
 ## Result
 
 ![README_resources/BookCover.jpg](README_resources/lighting-demo.gif)
+![README_resources/BookCover.jpg](README_resources/lighting-demo.png)
+
 
 
 ## Getting Started
