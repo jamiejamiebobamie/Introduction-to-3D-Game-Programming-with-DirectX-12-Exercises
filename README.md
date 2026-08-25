@@ -44,7 +44,7 @@ NOTE: Point filtering for mipmaps causes the textures to "pop-in" when the speci
 
 ## Result
 
-![README_resources/BookCover.jpg](README_resources/texturing-demo.gif)
+![Texturing demo](README_resources/texturing-demo.gif)
 
 ## Getting Started
 
