@@ -1171,15 +1171,6 @@ void d3dApp::UpdateTransparentRitemsDrawOrder() {
 		newVector.push_back(mRitemLayer[(int)RenderLayer::Transparent][mid_i]);
 		newVector.push_back(mRitemLayer[(int)RenderLayer::Transparent][min_i]);
 
-		//std:wstring text =
-		//L"max_i = " + std::to_wstring(max_i) + L" " +
-		//L"mid_i = " + std::to_wstring(mid_i) + L" " +
-		//L"min_i = " + std::to_wstring(min_i) + L" " +
-		//L"ObjCBIndex = " + std::to_wstring(mRitemLayer[(int)RenderLayer::Transparent][max_i]->ObjCBIndex) + L" " +
-		//L"ObjCBIndex2 = " + std::to_wstring(newVector[0]->ObjCBIndex) + L" " +
-		//L"\n";
-		//::OutputDebugString(text.c_str());
-
 		mRitemLayer[(int)RenderLayer::Transparent] = newVector;
 		mIsCameraChange = false;
 	}
