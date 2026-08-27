@@ -27,7 +27,6 @@ Topics Covered in this chapter include:
 
 ## Result
 
-TO-DO: show gif of camera rotating around transparent colored boxes, overlapping
 ![README_resources/blending-demo-2.gif](README_resources/blending-demo-2.gif)
 
 As a fun challenge, I wrote code to sort the render order of the transparent scene geometry so the objects would blend correctly.
