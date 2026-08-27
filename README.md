@@ -66,7 +66,7 @@ https://d3dcoder.net/d3d12.htm
   * [EXERCISE 7](https://github.com/jamiejamiebobamie/DirectX_FromScratch/tree/bezier-ch14-ex7)
   * [EXERCISE 8](https://github.com/jamiejamiebobamie/DirectX_FromScratch/tree/bezier-ch14-ex8)  
 
-Part III Topics
+### Part III Topics
 * Chapter 15 Building a First Person Camera and Dynamic Indexing
   * [CHAPTER CODE (AND FUN!)](https://github.com/jamiejamiebobamie/DirectX_FromScratch/tree/camera-dynamic-indexing-demo)
   * [EXERCISE 2](https://github.com/jamiejamiebobamie/DirectX_FromScratch/tree/camera-ch15-ex2)
