@@ -21,14 +21,14 @@ Topics Covered in this chapter include:
 	* Blend the src and dest pixels based on the opacity of the src pixel.
 	* Source blend factor should be D3D12_BLEND_SRC_ALPHA, the destination blend factor should be D3D12_BLEND_INV_SRC_ALPHA, and the blend operator should be D3D12_BLEND_OP_ADD.
 	* This creates this equation: C = (a_src * Csrc) + (1 - a_src) * Cdst.
-	* *One caveat with this approach: if you have multiple transparent meshes overlapping on the screen, the transparent meshes need to be sorted correctly when drawing them, with the farthest mesh in the background first and the closest one to the viewer last. Even after doing this there may still be issues if the geometry is complex and there is not a clear spatial ordering.*
+	* **One caveat with this approach: if you have multiple transparent meshes overlapping on the screen, the transparent meshes need to be sorted correctly when drawing them, with the farthest mesh in the background first and the closest one to the viewer last. Even after doing this there may still be issues if the geometry is complex and there is not a clear spatial ordering.**
 * How do you reject a pixel completely in the pixel shader, for example when drawing a leaf?
 	* HLSL has a built-in "clip" function that rejects the pixel if the input to the function is less than 0.
 
 ## Result
 
 TO-DO: show gif of camera rotating around transparent colored boxes, overlapping
-![README_resources/BookCover.jpg](README_resources/texturing-demo.gif)
+![README_resources/blending-demo-2.gif](README_resources/blending-demo-2.gif)
 
 As a fun challenge, I wrote code to sort the render order of the transparent scene geometry so the objects would blend correctly.
 As mentioned above, overlapping, semi-transparent objects need to be drawn from furthest to closest (to the viewer), so the blending is correct.
