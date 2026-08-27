@@ -48,7 +48,7 @@ Topics Covered in this chapter include:
 	transparentPsoDesc.BlendState.RenderTarget[0] = transparencyBlendDesc;
 	ThrowIfFailed(md3dDevice->CreateGraphicsPipelineState(&transparentPsoDesc, IID_PPV_ARGS(&mPSOs["transparent"])));
 ```
-### PSO descriptor for the alpha-tested metal box shader:*
+### PSO descriptor for the alpha-tested metal box shader:
 ```
 	D3D12_GRAPHICS_PIPELINE_STATE_DESC alphaTestedPsoDesc = opaquePsoDesc;
 	alphaTestedPsoDesc.PS =
@@ -59,7 +59,7 @@ Topics Covered in this chapter include:
 	alphaTestedPsoDesc.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
 	ThrowIfFailed(md3dDevice->CreateGraphicsPipelineState(&alphaTestedPsoDesc, IID_PPV_ARGS(&mPSOs["alphaTested"])));
 ```
-### Pixel shader showing the alpha-test to clip parts of the metal box:*
+### Pixel shader showing the alpha-test to clip parts of the metal box:
 ```
 float4 PS(VertexOut pin) : SV_Target
 {
